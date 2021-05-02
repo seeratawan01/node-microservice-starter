@@ -15,6 +15,12 @@ app.use(cors());
 const v1_routes = require('./api/routes/v1')(router, {});
 app.use('/v1', v1_routes)
 
+// Default Route
+app.get('/', (req, res) => {
+    res.status(200);
+    res.send("Api Server is Up!");
+});
+
 // Start Listening
 app.listen(port, function() {
     console.log('Server started on port: ' + port);
