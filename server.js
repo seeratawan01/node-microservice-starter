@@ -1,10 +1,10 @@
 import 'dotenv/config';
 
 const express = require('express')
-const routes = require('./api/routes');
 import cors from 'cors';
 
 const app = express();
+const router = express.Router()
 const port = process.env.APP_PORT || 3000;
 
 
@@ -12,7 +12,8 @@ const port = process.env.APP_PORT || 3000;
 app.use(cors());
 
 // Setting Routes
-routes(app);
+const v1_routes = require('./api/routes/v1')(router, {});
+app.use('/v1', v1_routes)
 
 // Start Listening
 app.listen(port, function() {
