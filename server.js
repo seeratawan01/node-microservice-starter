@@ -5,7 +5,7 @@ const app = express();
 const router = express.Router()
 
 const config = require('./config')
-const port = config.app.port;
+const port = config.port;
 
 
 // Enable CORS HTTP headers
