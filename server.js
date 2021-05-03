@@ -1,11 +1,11 @@
-import 'dotenv/config';
-
 const express = require('express')
 import cors from 'cors';
 
 const app = express();
 const router = express.Router()
-const port = process.env.APP_PORT || 3000;
+
+const config = require('./config')
+const port = config.app.port;
 
 
 // Enable CORS HTTP headers

@@ -1,9 +1,11 @@
+import 'dotenv/config';
+
 const env = process.env.NODE_ENV || 'development';
 
 const config = {
     common: {
         app: {
-            port: parseInt(process.env.APP_PORT) || 3000
+            port: parseInt(process.env.APP_PORT) || 3002
         },
     },
     development: {
